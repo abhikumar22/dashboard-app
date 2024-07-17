@@ -3,19 +3,17 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
-import Sidebar from '../components/Sidebar';
-import RightSectionWrapper from '../AppWrappers/RightSectionWrapper';
+// import Sidebar from '../components/OLD/Sidebar';
+// import RightSectionWrapper from '../AppWrappers/OLD/RightSectionWrapper';
 
 //Lazy Load pages
-const Admin = lazy(() => import('../containers/admin'));
-const Applications = lazy(() => import('../containers/application'));
-const Connections = lazy(() => import('../containers/connections'));
-const Cost = lazy(() => import('../containers/cost'));
-const Docs = lazy(() => import('../containers/docs'));
-const Security = lazy(() => import('../containers/security'));
+const Login = lazy(() => import('../containers/Authentication/Login'));
+const Signup = lazy(() => import('../containers/Authentication/Signup'));
+const HomePage = lazy(() => import('../containers/DashboardPages/HomePage'));
 const NotFound = lazy(() => import('../containers/NotFound'));
 
-import TopBar from '../components/TopBar';
+
+// import TopBar from '../components/OLD/TopBar';
 
 const LoadingState = () => {
     return (
@@ -31,40 +29,25 @@ const LoadingState = () => {
 
 const RoutesApp = () => {
     return (
-        <div style={{ display: 'flex' }}>
-            <Sidebar />
-            <RightSectionWrapper>
-                <TopBar />
+        <div style={{ display: 'flex', justifyContent:'center',alignItems:'center' }}>
+            {/* <Sidebar /> */}
+            {/* <RightSectionWrapper> */}
+                {/* <TopBar /> */}
                 <div className='Router_App px-8 h-full bg-bg-grey'>
                     <Routes>
-                        <Route path="/admin" element={
-                            <React.Suspense fallback={<LoadingState/>}>
-                                <Admin />
-                            </React.Suspense>
-                        } />
                         <Route path="/" element={
                             <React.Suspense fallback={<LoadingState/>}>
-                                <Applications />
+                                <HomePage />
                             </React.Suspense>
                         } />
-                        <Route path="/connections" element={
+                        <Route path="/login" element={
                             <React.Suspense fallback={<LoadingState/>}>
-                                <Connections />
+                                <Login />
                             </React.Suspense>
                         } />
-                        <Route path="/cost" element={
+                        <Route path="/signup" element={
                             <React.Suspense fallback={<LoadingState/>}>
-                                <Cost />
-                            </React.Suspense>
-                        } />
-                        <Route path="/docs" element={
-                            <React.Suspense fallback={<LoadingState/>}>
-                                <Docs />
-                            </React.Suspense>
-                        } />
-                        <Route path="/security" element={
-                            <React.Suspense fallback={<LoadingState/>}>
-                                <Security />
+                                <Signup />
                             </React.Suspense>
                         } />
                         <Route path="/404" element={
@@ -74,7 +57,7 @@ const RoutesApp = () => {
                         } />
                     </Routes>
                 </div>
-            </RightSectionWrapper>
+            {/* </RightSectionWrapper> */}
         </div>
     );
 };

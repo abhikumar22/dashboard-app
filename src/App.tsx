@@ -1,15 +1,20 @@
-import { useState } from 'react'
-import './App.css'
-import Signup from './containers/Authentication/Signup'
+import { useState } from "react";
+import AppRouter from './routes/AppRouter';
+import { Toaster } from "sonner";
+import "./App.scss";
+import Signup from "./containers/Authentication/Signup";
+import Login from "./containers/Authentication/Login";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
-  // const [count, setCount] = useState(0)
-
   return (
-    <>
-    <Signup/>
-    </>
-  )
+    <ErrorBoundary>
+      <div className="App_Route">
+        <Toaster />
+        <AppRouter />
+      </div>
+    </ErrorBoundary>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,48 @@
+
+.Login_Wrapper {
+  width: 100%;
+  height: 100vh;
+  // background-color: red;
+  .Login_Container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    .Login_Box {
+      background-color: white;
+      box-shadow: 0px 4px 20px 0px #45abd91f;
+      border: 1px solid #1111111f;
+      width: 600px;
+      // height: 420px;
+      padding: 32px;
+      border-radius: 12px;
+      .Title_Text{
+        font-weight: 700;
+        font-size: 32px;
+        margin-top: 24px;
+      }
+      .Subtitle_Container{
+        display: flex;
+        margin-top: 10px;
+        .Subtitle_text{
+            font-weight: 200;
+            color: #111111;
+            font-size: 16px;
+        }
+        .Signup_Navigation_text{
+            font-weight: 600;
+            color: #45ABD9;
+            font-size: 16px;
+            margin-left: 10px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+      }
+      .Fields_Box{
+        margin-top: 22px;
+      }
+    }
+  }
+}

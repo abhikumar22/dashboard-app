@@ -1,0 +1,15 @@
+.Button_Wrapper{
+    padding: 16px 0px;
+    background-color: #45ABD9;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 10px 0px;
+    font-weight: 700;
+    &.inActive{
+        cursor: not-allowed;
+        pointer-events: all !important;
+        background-color: grey;
+    }
+}
