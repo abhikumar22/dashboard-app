@@ -372,7 +372,7 @@ const Signup = () => {
           />
           <ButtonComponent
             isDisabled={false}
-            text={"Sign in"}
+            text={"Get Started"}
             onClickCbc={() => clickSignIn()}
           />
         </div>

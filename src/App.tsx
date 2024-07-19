@@ -10,7 +10,7 @@ function App() {
   return (
     <ErrorBoundary>
       <div className="App_Route">
-        <Toaster />
+        <Toaster position="top-right"  />
         <AppRouter />
       </div>
     </ErrorBoundary>
